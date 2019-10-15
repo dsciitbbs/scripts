@@ -21,6 +21,7 @@ jobs:
         pip install -r iitbbs-internet/requirements.txt
         
     - name: install firefox
+      run: |
         sudo apt update && sudo apt install firefox
         wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
         tar xzf geckodriver-v0.25.0-linux64.tar.gz
