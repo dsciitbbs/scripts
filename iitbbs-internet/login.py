@@ -9,7 +9,7 @@ options.headless = True
 
 driver = webdriver.Firefox(options=options)
 
-user = raw_input('Username: ')
+user = input('Username: ')
 pssw = getpass(prompt='Password: ')
 
 try:

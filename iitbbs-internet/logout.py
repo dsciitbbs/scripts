@@ -8,7 +8,7 @@ from selenium.webdriver.firefox.options import Options
 options = Options()
 options.headless = True
 
-user = raw_input('Username: ')
+user = input('Username: ')
 pssw = getpass(prompt='Password: ')
 
 driver = webdriver.Firefox(options=options)
