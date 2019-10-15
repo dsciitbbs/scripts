@@ -8,15 +8,15 @@ from selenium.webdriver.firefox.options import Options
 options = Options()
 options.headless = True
 
-user = input('Username: ')
-pssw = getpass(prompt='Password: ')
-
 driver = webdriver.Firefox(options=options)
 
 try:
 	driver.get("http://192.168.1.5:8090/")
 except:
 	sys.exit(0)
+
+user = input('Username: ')
+pssw = getpass(prompt='Password: ')	
 
 username = driver.find_element_by_name("username")
 username.clear()

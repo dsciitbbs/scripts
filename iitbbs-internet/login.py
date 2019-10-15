@@ -9,13 +9,13 @@ options.headless = True
 
 driver = webdriver.Firefox(options=options)
 
-user = input('Username: ')
-pssw = getpass(prompt='Password: ')
-
 try:
         driver.get("http://192.168.1.5:8090/")
 except:
         sys.exit(0)
+
+user = input('Username: ')
+pssw = getpass(prompt='Password: ')
 
 username = driver.find_element_by_name("username")
 username.clear()
