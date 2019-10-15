@@ -37,6 +37,6 @@ driver.switch_to.window(driver.window_handles[0])
 
 driver.find_element_by_id("loginbutton").click()
 
-print "Logged Out."
+print ("Logged Out.")
 
 driver.close()
