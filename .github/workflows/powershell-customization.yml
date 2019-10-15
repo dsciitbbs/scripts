@@ -1,0 +1,17 @@
+name: powershell-customization
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: windows-2019
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run the profile setup script
+      run: .\PowerShell-Customization\Profile.ps1
+      shell: powershell
