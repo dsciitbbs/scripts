@@ -1,0 +1,22 @@
+name: iitbbs internet test
+
+on: [push]
+
+jobs:
+	build:
+		runs-on: ubuntu-latest
+		
+		steps:
+		- uses: actions/checkout@v1
+		- name: installing python
+		- uses: actions/setup-python@v1
+		with:
+			python-version: 3.7
+		- name: install dependencies
+		run: |
+			python -m pip install --upgrade pip
+			pip install -r iitbbs-internet/requirements.txt
+			sudo apt update && sudo apt install firefox
+		- name: run the test
+		run: |
+			python login.py
