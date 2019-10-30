@@ -3,8 +3,6 @@
 This repository contains scripts that are commonly used by us for automation of every day tasks.
 
 ## Scripts
-- readme-automation
-- PowerShell-Customization
 - iitbbs-internet
 
 ## Contribution
