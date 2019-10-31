@@ -1,0 +1,25 @@
+name: speed test
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      
+    - name: setting up python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
+    - name: install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install speedtest-cli --user
+
+    - name: run test
+      run: |
+        speedtest-cli
