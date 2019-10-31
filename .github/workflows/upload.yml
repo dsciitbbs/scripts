@@ -9,19 +9,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-      
-    - name: setting up python
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
 
     - name: install dependencies
       run: |
-        sudo apt-get install aria2
+        sudo apt-get install wget
 
     - name: run test
       run: |
-        aria2c https://www.seedr.cc/zip/71100910?st=0a330f5dd68e85da43b8d2cfa4183a09917b776677d714bc7b8223b48f185a64&e=1572588834
+        wget https://www.seedr.cc/zip/71100910?st=0a330f5dd68e85da43b8d2cfa4183a09917b776677d714bc7b8223b48f185a64&e=1572588834
 
     - name: change directory
       run: |
