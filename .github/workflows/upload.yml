@@ -21,7 +21,7 @@ jobs:
 
     - name: run test
       run: |
-        aria2c -x5  https://www.seedr.cc/zip/71087853?st=7d55df6113647cd9687cfffd43bddb5eb453555a74ac760b257c3a9151bba909&e=1572578882
+        aria2c -x5 http://releases.ubuntu.com/18.04.3/ubuntu-18.04.3-desktop-amd64.iso
 
     - name: change directory
       run: |
