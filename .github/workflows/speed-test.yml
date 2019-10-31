@@ -20,6 +20,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install speedtest-cli --user
 
+    - name: change directory
+      run: |
+        cd '/home/runner/.local/bin'
+
     - name: run test
       run: |
         speedtest-cli
