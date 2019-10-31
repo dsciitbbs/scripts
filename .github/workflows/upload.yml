@@ -1,0 +1,40 @@
+name: speed test
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+      
+    - name: setting up python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+
+    - name: install dependencies
+      run: |
+        sudo apt-get install aria2
+
+    - name: run test
+      run: |
+        aria2c -x5  https://www.seedr.cc/zip/71087853?st=7d55df6113647cd9687cfffd43bddb5eb453555a74ac760b257c3a9151bba909&e=1572578882
+
+    - name: change directory
+      run: |
+        cd /home/runner/work/ScrapeYard/ScrapeYard/
+        ls -lh
+
+    - name: Create directory
+      run: |
+        mkdir -p path/to/artifact
+        echo hello > path/to/artifact/world.txt
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: my-artifact
+        path: /home/runner/work/ScrapeYard/ScrapeYard
