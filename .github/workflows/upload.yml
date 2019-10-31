@@ -25,7 +25,7 @@ jobs:
 
     - name: change directory
       run: |
-        cd /home/runner/work/ScrapeYard/ScrapeYard/
+        cd /home/runner/work/scripts/scripts/
         ls -lh
 
     - name: Create directory
@@ -37,4 +37,4 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         name: my-artifact
-        path: /home/runner/work/ScrapeYard/ScrapeYard
+        path: /home/runner/work/scripts/scripts
