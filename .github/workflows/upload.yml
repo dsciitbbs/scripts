@@ -12,7 +12,8 @@ jobs:
 
     - name: install dependencies
       run: |
-        sudo apt-get install wget
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        brew install wget
 
     - name: run test
       run: |
