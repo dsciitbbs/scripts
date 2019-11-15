@@ -22,8 +22,8 @@ country code is the two-digit code for your country. For a list of country
 codes, see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
  
 .NOTES
-  Written by Nick Tamm, nicktamm.com
-I take no responsibility for any issues caused by this script.
+  Written by Nick Tamm, nicktamm.com.
+  I am simply using his script and take no responsibility for any issues caused by this script.
  
 .LINK
   https://github.com/obs0lete/Get-Weather
