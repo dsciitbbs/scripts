@@ -5,33 +5,24 @@ on: [push]
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
 
     steps:
     - uses: actions/checkout@v1
-      
-    - name: setting up python
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
 
     - name: install dependencies
       run: |
-        sudo apt-get install aria2
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        brew install wget
 
     - name: run test
       run: |
-        aria2c -x5  https://www.seedr.cc/zip/71087853?st=7d55df6113647cd9687cfffd43bddb5eb453555a74ac760b257c3a9151bba909&e=1572578882
+        wget https://www.seedr.cc/zip/71100910?st=0a330f5dd68e85da43b8d2cfa4183a09917b776677d714bc7b8223b48f185a64&e=1572588834
 
     - name: change directory
       run: |
         cd /home/runner/work/scripts/scripts/
         ls -lh
-
-    - name: Create directory
-      run: |
-        mkdir -p path/to/artifact
-        echo hello > path/to/artifact/world.txt
 
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
