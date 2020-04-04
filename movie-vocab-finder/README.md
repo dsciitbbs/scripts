@@ -24,4 +24,4 @@ You can stop the script by pressing ctrl + C during a 2 sec gap to this next cli
 - We can use `subprocess` module instead of `os.system` or use `os.kill` command in the script to avoid manual killing of the vlc clip.  
 - Adding of signal handlers to skip the clip or skip the word to go for the next word.  
 
-Written by MadhavTummala[https://github.com/MadhavChoudhary]
+Written by [Madhav Tummala](https://github.com/MadhavChoudhary)
