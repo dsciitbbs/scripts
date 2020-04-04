@@ -13,5 +13,5 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run the profile setup script
-      run: .\PowerShell-Customization\Profile.ps1
+      run: .\powershell-customization\Profile.ps1
       shell: powershell

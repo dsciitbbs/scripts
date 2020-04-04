@@ -3,8 +3,10 @@
 This repository contains scripts that are commonly used by us for automation of every day tasks.
 
 ## Scripts
+- movie-vocab-finder
+- colorTheShell
 - readme-automation
-- PowerShell-Customization
+- powershell-customization
 - iitbbs-internet
 
 ## Contribution
