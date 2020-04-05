@@ -6,7 +6,6 @@ This repository contains scripts that are commonly used by us for automation of 
 - pdf-to-text
 - color-the-shell
 - movie-vocab-finder
-- colorTheShell
 - readme-automation
 - powershell-customization
 - iitbbs-internet
