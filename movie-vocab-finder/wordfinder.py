@@ -1,10 +1,14 @@
 import os
+import sys
 import subprocess
 from time import sleep
 
-path_to_movies_folder = '/Volumes/Seagate/Movies\ English/Movies\ English'
+if len(sys.argv) >=2:
+	searchterm = sys.argv[1]
+else:
+	searchterm = 'travesty'
 
-searchterm = 'imbecile'
+path_to_movies_folder = '/Volumes/Seagate/Movies\ English/Movies\ English'
 
 command = "grep -r -i -B 4 --include=\*.srt '{}' {}".format(searchterm,path_to_movies_folder)
 
@@ -31,6 +35,8 @@ for hit in hits:
 
 			hits_dict[movie][subtitle].append(time)
 
+print('{} hits'.format(len(hits_dict.keys())))
+
 for movie in hits_dict:
 	subtitle = list(hits_dict[movie].keys())[0]
 	for time in hits_dict[movie][subtitle]:
@@ -41,15 +47,15 @@ for movie in hits_dict:
 		stop = int(h)*3600 + int(m)*60 + int(s.split(',')[0])
 
 		start -= 10
-		stop += 5
 
 		for file in os.listdir(movie):
 			if file.endswith('.mp4') or file.endswith('.mkv') or file.endswith('.avi'):
+				movie = movie.replace(' ','\ ')
+				movie = movie.replace('(', '\(')
+				movie = movie.replace(')', '\)')
 				file = movie+'/'+file
-				file = file.replace(' ','\ ')
-				file = file.replace('(', '\(')
-				file = file.replace(')', '\)')
-				cmd = 'vlc --start-time {} --stop-time {} {}'.format(start,stop,file)
+				sub = movie+'/'+subtitle+'srt'
+				cmd = 'vlc --start-time {} --sub-file {} {}'.format(start,sub,file)
 				os.system(cmd)
 				# p = subprocess.Popen("exec " + cmd, stdout=subprocess.PIPE, shell=True)
 				# time.sleep(15)

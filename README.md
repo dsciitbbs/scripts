@@ -3,6 +3,8 @@
 This repository contains scripts that are commonly used by us for automation of every day tasks.
 
 ## Scripts
+- pdf-to-text
+- color-the-shell
 - movie-vocab-finder
 - colorTheShell
 - readme-automation
