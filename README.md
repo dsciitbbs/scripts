@@ -9,6 +9,7 @@ This repository contains scripts that are commonly used by us for automation of 
 - readme-automation
 - powershell-customization
 - iitbbs-internet
+- SpeedTest
 
 ## Contribution
 

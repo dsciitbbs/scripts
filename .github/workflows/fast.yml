@@ -1,0 +1,33 @@
+name: speed-test-cli
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    
+    - name: Make shell executable
+      run: chmod +x ./SpeedTest/chrome.sh
+    
+    - name: Install chrome, chromedriver and selenium
+      run : ./SpeedTest/chrome.sh
+    
+    - name: setting up python
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install colored selenium
+    
+    - name: Test actual script
+      run: python SpeedTest/cli.py
